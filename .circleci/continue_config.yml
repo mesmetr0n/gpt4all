@@ -15,7 +15,7 @@ parameters:
     default: false
   run-csharp-workflow:
     type: boolean
-    default: false
+    default: true
 
 jobs:
   default-job:
