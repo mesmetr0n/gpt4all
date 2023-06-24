@@ -560,8 +560,8 @@ jobs:
                 name: "Prepare Native Libs"
                 command: |
                   cd gpt4all-bindings/csharp
-                  mkdir -p runtimes/osx-x64/native
-                  cp /tmp/workspace/runtimes/osx-x64/*.dylib runtimes/osx-x64/native/
+                  mkdir -p runtimes/osx/native
+                  cp /tmp/workspace/runtimes/osx-x64/*.dylib runtimes/osx/native/
                   ls -R runtimes
             - run:
                 name: "Install project dependencies"
