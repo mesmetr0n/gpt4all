@@ -502,13 +502,13 @@ jobs:
                 keys:
                   - gpt4all-csharp-nuget-packages-win
             - attach_workspace:
-                at: /tmp/workspace
+                at: C:\Users\circleci\workspace
             - run:
                 name: "Prepare Native Libs"
                 command: |
                   cd gpt4all-bindings/csharp
-                  mkdir -p runtimes/win-x64/native
-                  cp /tmp/workspace/runtimes/win-x64/*.dll runtimes/win-x64/native/
+                  mkdir -p runtimes\win-x64\native
+                  cp C:\Users\circleci\workspace\runtimes\win-x64\*.dll runtimes\win-x64\native\
                   ls -R runtimes
             - run:
                 name: "Install project dependencies"
