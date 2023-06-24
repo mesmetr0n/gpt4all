@@ -328,10 +328,12 @@ jobs:
           name: Build Libraries
           command: |
             cd gpt4all-backend
-            mkdir -p runtimes/linux-x64
-            cd runtimes/linux-x64
+            mkdir -p runtimes/build
+            cd runtimes/build
             cmake ../..
             cmake --build . --parallel --config Release
+            mkdir ../linux-x64
+            cp -L *.so ../linux-x64
       - persist_to_workspace:
           root: gpt4all-backend
           paths:
