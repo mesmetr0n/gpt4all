@@ -607,11 +607,11 @@ jobs:
             cd gpt4all-bindings/csharp
             mkdir -p runtimes/linux-x64/native
             cp /tmp/workspace/runtimes/linux-x64/*.so runtimes/linux-x64/native/
-            mkdir -p runtimes\win-x64\native
+            mkdir -p runtimes/win-x64/native
             cp /tmp/workspace/runtimes/win-x64/*.dll runtimes/win-x64/native/
             mkdir -p runtimes/osx/native
             cp /tmp/workspace/runtimes/osx-x64/*.dylib runtimes/osx/native/
-            dotnet pack Gpt4All.csproj -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg -c Release
+            dotnet pack ./Gpt4All/Gpt4All.csproj -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg -c Release
             dotnet nuget push ./Gpt4All/bin/Release/Gpt4All.*.nupkg -s https://nuget.pkg.github.com/mesmetr0n/index.json -k $NUGET_TOKEN --skip-duplicate
       - store_artifacts:
           path: gpt4all-bindings/csharp/Gpt4All/bin/Release
